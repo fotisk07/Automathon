@@ -1,0 +1,8 @@
+train_path : 'data/dataset_train.npy'
+test_path : 'data/dataset_test.npy'
+
+batch_size : 16
+shuffle : True
+num_workers : 0
+
+checkpoint_path : "Automathon/95l9v49ocheckpoints/epoch=9-step=4380.ckpt"
