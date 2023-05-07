@@ -4,13 +4,14 @@ from torch import optim
 from torch import nn
 import torch
 from src.Net import Net
+from src.custom_loss import loss
 
 
 class LitModel(pl.LightningModule):
     def __init__(self):
         super().__init__()
         self.model = Net()
-        self.loss = nn.MSELoss()
+        self.loss = loss
 
     def training_step(self, batch, batch_idx):
         # training_step defines the train loop.
@@ -18,7 +19,7 @@ class LitModel(pl.LightningModule):
         x, y1, y2 = batch.split(1, 3)
 
         y1_pred, y2_pred = self.model(x)
-        loss = self.loss(y1_pred, y1) + self.loss(y2_pred, y2)
+        loss = self.loss(y1_pred, y2_pred, y1, y2)
 
         self.log("train_loss", loss)
         return loss
@@ -30,7 +31,7 @@ class LitModel(pl.LightningModule):
         # this is the validation loop
         x, y1, y2 = batch.split(1, 3)
         y1_pred, y2_pred = self.model(x)
-        loss = self.loss(y1_pred, y1) + self.loss(y2_pred, y2)
+        loss = self.loss(y1_pred, y2_pred, y1, y2)
 
         self.log("valid/loss", loss)
 

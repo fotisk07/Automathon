@@ -9,6 +9,8 @@ class Net(nn.Module):
         self.conv1 = nn.Conv2d(
             in_channels=1, out_channels=16, kernel_size=3, stride=1, padding='same')
 
+        self.rel = nn.ReLU()
+
         self.conv2 = nn.Conv2d(
             in_channels=16, out_channels=32, kernel_size=3, stride=1, padding='same')
 
@@ -28,8 +30,11 @@ class Net(nn.Module):
         x = x.permute(0, 3, 1, 2)  # (BATCH_SIZE, 1, 28, 28)
 
         x = self.conv1(x)  # (BATCH_SIZE, 16, 28, 28)
+        x = self.rel(x)
         x = self.conv2(x)  # (BATCH_SIZE, 32, 28, 28)
+        x = self.rel(x)
         x = self.conv3(x)  # (BATCH_SIZE, 64, 28, 28)
+        x = self.rel(x)
         x = self.conv4(x)  # (BATCH_SIZE, 2, 28, 28)
 
         y1 = x[:, 0:1, :, :]  # (BATCH_SIZE, 1, 28, 28)

@@ -47,6 +47,6 @@ def get_data(config):
 
     train_loader = torch.utils.data.DataLoader(train_dataset, **params)
     valid_loader = torch.utils.data.DataLoader(valid_dataset, **params_val)
-    test_loader = torch.utils.data.DataLoader(test_dataset, **params)
+    test_loader = torch.utils.data.DataLoader(test_dataset, **params_val)
 
     return train_loader, valid_loader, test_loader

@@ -20,8 +20,9 @@ train_loader, valid_loader, test_loader = get_data(config)
 model = LitModel()
 
 if train:
-    wandb_logger = WandbLogger(name='Basic Architecture', project='Automathon')
-    train = pl.Trainer(max_epochs=10, logger=wandb_logger)
+    wandb_logger = WandbLogger(
+        name='Custom Loss', project='Automathon')
+    train = pl.Trainer(max_epochs=15, logger=wandb_logger)
     train.fit(model, train_dataloaders=train_loader,
               val_dataloaders=valid_loader)
 
