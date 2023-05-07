@@ -33,7 +33,10 @@ class LitModel(pl.LightningModule):
         y1_pred, y2_pred = self.model(x)
         loss = self.loss(y1_pred, y2_pred, y1, y2)
 
+        score = 1/(5*loss + 1)
+
         self.log("valid/loss", loss)
+        self.log("valid/score", score)
 
     def forward(self, batch):
         # used by the testing script

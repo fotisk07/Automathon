@@ -7,7 +7,7 @@ from pytorch_lightning.loggers import WandbLogger
 import yaml
 
 
-train = False
+train = True
 
 # Config import and logger setup
 config = yaml.load(open("config.yaml", "r"), Loader=yaml.FullLoader)
