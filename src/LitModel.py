@@ -3,12 +3,13 @@ import pytorch_lightning as pl
 from torch import optim
 from torch import nn
 import torch
+from src.Net import Net
 
 
 class LitModel(pl.LightningModule):
-    def __init__(self, model):
+    def __init__(self):
         super().__init__()
-        self.model = model
+        self.model = Net()
         self.loss = nn.MSELoss()
 
     def training_step(self, batch, batch_idx):

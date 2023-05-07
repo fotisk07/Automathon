@@ -4,17 +4,14 @@ import numpy as np
 import pytorch_lightning as pl
 
 
-def create_preds(config, network, data_loader):
+def create_preds(config, data_loader):
     print("Loading up the model")
 
-    model = LitModel.load_from_checkpoint(
-        checkpoint_path=config["checkpoint_path"], model=network)
+    model = LitModel.load_from_checkpoint(checkpoint_path=config["checkpoint_path"])
 
     print("Done loading the model")
     print("Testing...")
 
-    model = LitModel.load_from_checkpoint(
-        checkpoint_path="Automathon/18lmvoly/checkpoints/epoch=9-step=4380.ckpt", model=network)
     trainer = pl.Trainer()
     predictions = trainer.predict(model, dataloaders=data_loader)
 
