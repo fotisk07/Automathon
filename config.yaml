@@ -1,3 +1,5 @@
+---  # default1.yaml
+
 train_path : 'data/dataset_train.npy'
 test_path : 'data/dataset_test.npy'
 
@@ -6,3 +8,5 @@ shuffle : True
 num_workers : 0
 
 checkpoint_path : "Automathon/0bkq2u2l/checkpoints/epoch=14-step=6570.ckpt"
+
+train : True

@@ -5,13 +5,11 @@ from src.submit import create_preds
 import pytorch_lightning as pl
 from pytorch_lightning.loggers import WandbLogger
 import yaml
+from cliconfig import make_config
 
-
-train = True
 
 # Config import and logger setup
-config = yaml.load(open("config.yaml", "r"), Loader=yaml.FullLoader)
-
+config = make_config('config.yaml')
 
 # Data import
 train_loader, valid_loader, test_loader = get_data(config)
@@ -19,9 +17,10 @@ train_loader, valid_loader, test_loader = get_data(config)
 # Model Setup
 model = LitModel()
 
-if train:
+
+if config['train'] == True:
     wandb_logger = WandbLogger(
-        name='Custom Loss', project='Automathon')
+        name='Custom Loss', project='Automathon', save_dir="wandb_logs")
     train = pl.Trainer(max_epochs=15, logger=wandb_logger)
     train.fit(model, train_dataloaders=train_loader,
               val_dataloaders=valid_loader)
