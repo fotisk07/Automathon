@@ -8,6 +8,7 @@ experiment_name: "Default Experiment"
 batch_size : 16
 shuffle : True
 num_workers : 0
+epochs: 10
 
 checkpoint_path : ""
 

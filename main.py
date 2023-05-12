@@ -21,7 +21,7 @@ model = LitModel()
 if config['train'] == True:
     wandb_logger = WandbLogger(
         name=config["experiment_name"], project='Automathon')
-    train = pl.Trainer(max_epochs=15, logger=wandb_logger)
+    train = pl.Trainer(max_epochs=config["epochs"], logger=wandb_logger)
     train.fit(model, train_dataloaders=train_loader,
               val_dataloaders=valid_loader)
 
