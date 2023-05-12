@@ -1,4 +1,4 @@
-# <div align="center">  <img src="Automathon\assets\logo.jpg" alt="isolated" width="200"/> </div> <div align="center"> Automathon </div>
+# <div align="center">  <img src="assets\logo.jpg" alt="isolated" width="200"/> </div> <div align="center"> Automathon </div>
 
 [![License](https://img.shields.io/github/license/valentingol/cliconfig?color=999)](https://stringfixer.com/fr/MIT_license)
 [![Torch_logo](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
