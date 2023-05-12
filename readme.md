@@ -1,4 +1,4 @@
-# Automathon 
+# <div align="center">  <img src="C:\Users\Fotis\Documents\Programming\Automathon\assets\logo.jpg" alt="isolated" width="200"/> </div> <div align="center"> Automathon </div>
 
 [![License](https://img.shields.io/github/license/valentingol/cliconfig?color=999)](https://stringfixer.com/fr/MIT_license)
 
