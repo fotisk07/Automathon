@@ -9,7 +9,7 @@ from cliconfig import make_config
 
 
 # Config import and logger setup
-config = make_config('config.yaml')
+config = make_config('configs/default.yaml')
 
 # Data import
 train_loader, valid_loader, test_loader = get_data(config)
@@ -20,7 +20,7 @@ model = LitModel()
 
 if config['train'] == True:
     wandb_logger = WandbLogger(
-        name='Custom Loss', project='Automathon', save_dir="wandb_logs")
+        name=config["experiment_name"], project='Automathon')
     train = pl.Trainer(max_epochs=15, logger=wandb_logger)
     train.fit(model, train_dataloaders=train_loader,
               val_dataloaders=valid_loader)
