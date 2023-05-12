@@ -1,9 +1,6 @@
 # Automathon 
 
 [![License](https://img.shields.io/github/license/valentingol/cliconfig?color=999)](https://stringfixer.com/fr/MIT_license)
-
-![PythonVersion](https://img.shields.io/badge/python-3.8%20%7E%203.10-informational)
-![PytorchVersion](https://img.shields.io/badge/Pytorch-1.8%20%7E%201.12%20%7c%202.0-blue)
 [![Torch_logo](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![Wandb_logo](https://img.shields.io/badge/Weights_&_Biases-FFBE00?style=for-the-badge&logo=WeightsAndBiases&logoColor=white)](https://wandb.ai/site)
 [![GitHub User followers](https://img.shields.io/github/followers/fotisk07?label=User%20followers&style=social)](https://github.com/fotisk07)
